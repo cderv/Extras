@@ -3,14 +3,11 @@
     "description": "A safe place for your notes, thoughts, and life's work.",
     "homepage": "https://standardnotes.org/",
     "license": "AGPL-3.0-or-later",
-    "url": "https://github.com/standardnotes/desktop/releases/download/v3.9.9/standard-notes-3.9.9-win.exe#/dl.7z",
-    "hash": "sha512:5fb01f414524049046378ffda72a8c965622d01fd6ebb9300df6814c83ccc92d3c28df4a21862b5bad5e0df5628f40debf2f1cb116d545d2245fc584b640a819",
+    "url": "https://github.com/standardnotes/desktop/releases/download/v3.9.9/standard-notes-3.9.9-win-x64.exe#/dl.7z",
+    "hash": "sha512:e0b14cb47cac7d7a64c339fff811dd1e9f649249d542b428a4894a4de02125228395e6980c50a59f05e77298ef79c5af4b6e73593ae8f51a700516966eca8a34",
     "architecture": {
         "64bit": {
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
-        },
-        "32bit": {
-            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
         }
     },
     "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse",
@@ -25,10 +22,10 @@
         "github": "https://github.com/standardnotes/desktop"
     },
     "autoupdate": {
-        "url": "https://github.com/standardnotes/desktop/releases/download/v$version/standard-notes-$version-win.exe#/dl.7z",
+        "url": "https://github.com/standardnotes/desktop/releases/download/v$version/standard-notes-$version-win-x64.exe#/dl.7z",
         "hash": {
             "url": "$baseurl/latest.yml",
-            "regex": "sha512:\\s+$base64"
+            "regex": "\\s+- url: $basename\\s+sha512:\\s+$base64"
         }
     }
 }
